@@ -7,6 +7,7 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { BrowseComponent } from './components/browse/browse.component';
 import { PlaylistComponent } from './components/playlist/playlist.component';
 import { AccountComponent } from './components/account/account.component';
+import { PlayerComponent } from './components/shared/player/player.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AccountComponent } from './components/account/account.component';
     NavbarComponent,
     BrowseComponent,
     PlaylistComponent,
-    AccountComponent
+    AccountComponent,
+    PlayerComponent
   ],
   imports: [
     BrowserModule,
