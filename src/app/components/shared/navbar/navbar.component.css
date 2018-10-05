@@ -1,5 +1,5 @@
 nav {
-  max-width: 200px;
+  max-width: 240px;
   color: #FFF;
   display: flex;
   padding: 1em;
@@ -18,10 +18,19 @@ li {
   font-size: 20px;
   padding: .5em;
   cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: #FFF;
   transition: color 150ms ease-out;
 }
 
-li:hover {
+a:hover {
+  color: #50fff8;
+}
+
+.active {
   color: #50fff8;
 }
 
@@ -37,7 +46,8 @@ li:hover {
   box-shadow: 0px 0px 0px 3px transparent;
   will-change: box-shadow;
   transition: box-shadow 200ms ease-out;
-
+  font-size: 18px;
+  text-align: center;
 }
 
 .add-playlist:hover {
