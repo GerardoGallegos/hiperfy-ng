@@ -1,0 +1,49 @@
+nav {
+  max-width: 200px;
+  color: #FFF;
+  display: flex;
+  padding: 1em;
+  border-right: 1px solid #292437;
+  height: 100%;
+  background-color: #060b17;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+  font-size: 20px;
+  padding: .5em;
+  cursor: pointer;
+  transition: color 150ms ease-out;
+}
+
+li:hover {
+  color: #50fff8;
+}
+
+.vf-logo {
+  width: 100%;
+}
+
+.add-playlist {
+  padding: .5em 1em;
+  color: #FFF;
+  border-radius: 3px;
+  border: 1px solid gray;
+  box-shadow: 0px 0px 0px 3px transparent;
+  will-change: box-shadow;
+  transition: box-shadow 200ms ease-out;
+
+}
+
+.add-playlist:hover {
+  padding: .5em 1em;
+  color: #FFF;
+  border-radius: 3px;
+  border: 1px solid gray;
+  box-shadow: 0px 0px 0px 3px #00d2ff;
+}
