@@ -3,6 +3,7 @@
   height: 115px;
   background-color: #0e1015;
   display: flex;
+  user-select: none;
 }
 
 .album {
@@ -74,6 +75,7 @@
   background-color: beige;
   border-radius: 5px;
   position: relative;
+  overflow: hidden;
 }
 
 .bar-box {

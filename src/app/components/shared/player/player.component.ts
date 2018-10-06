@@ -13,12 +13,16 @@ export class PlayerComponent implements OnInit {
   @Input() autoplay: boolean = true
 
   // The playing status
-  isPlaying: boolean
+  isPlaying: boolean = false
 
-  duration: number
+  // Type of duration time
+  // 'total' 3:00 | 'restant' 1:32
+  durationFormat: string = 'total'
+
+  duration: number = 0
 
   // The audio's volumen 0 - 1
-  vol: number
+  vol: number = 0.75
 
   // Total audio's duration in secods
   // of current audio track
@@ -26,21 +30,15 @@ export class PlayerComponent implements OnInit {
 
   // The current audio time, it updates
   // with the timeupdate listener
-  currentTime: number
+  currentTime: number = 0
 
   // Audio Element created in runtime
   audio: any
 
   // Percentage reproduced
-  reproduced: number
+  reproduced: number = 0
 
   constructor() {
-    this.reproduced = 0
-    this.duration = 0
-    this.vol = 0.75
-    this.currentTime = 0
-    this.isPlaying = false
-
     this.audio = new Audio()
     this.audio.type = 'audio/mpeg'
     this.audio.src = AUDIO_EXAMPLE
@@ -74,6 +72,14 @@ export class PlayerComponent implements OnInit {
       this.play()
     } else {
       this.pause()
+    }
+  }
+
+  toggleDurationFormat () {
+    if (this.durationFormat === 'total') {
+      this.durationFormat = 'restant'
+    } else {
+      this.durationFormat = 'total'
     }
   }
 

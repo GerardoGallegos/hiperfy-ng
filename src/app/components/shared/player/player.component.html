@@ -20,13 +20,16 @@
         </button>
       </div>
       <div class="timeline">
-        <div class="current-time">{{ currentTime }}</div>
+        <div class="current-time">{{ currentTime | audiotime }}</div>
         <div class="bar-box" (click)="skip($event)" (mousemove)="onMouseMove($event)">
           <div class="bar">
             <div class="bar-reproduced" [style.width]="reproduced + '%'"></div>
           </div>
         </div>
-        <div class="total-time">{{ totalTime }}</div>
+        <div class="total-time" (click)="toggleDurationFormat()">
+          <div *ngIf="durationFormat === 'total'">{{ totalTime | audiotime }}</div>
+          <div *ngIf="durationFormat === 'restant'">- {{ (totalTime - currentTime)  | audiotime }}</div>
+        </div>
       </div>
     </div>
     <div class="vol-box">

@@ -8,6 +8,7 @@ import { BrowseComponent } from './components/browse/browse.component';
 import { PlaylistComponent } from './components/playlist/playlist.component';
 import { AccountComponent } from './components/account/account.component';
 import { PlayerComponent } from './components/shared/player/player.component';
+import { AudiotimePipe } from './pipes/audiotime/audiotime.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PlayerComponent } from './components/shared/player/player.component';
     BrowseComponent,
     PlaylistComponent,
     AccountComponent,
-    PlayerComponent
+    PlayerComponent,
+    AudiotimePipe
   ],
   imports: [
     BrowserModule,
