@@ -36,8 +36,8 @@
       <div class="vol-btn">
         <span class="icon-sound"></span>
       </div>
-      <div class="bar-vol">
-        <div class="bar-vol-total"></div>
+      <div class="bar-vol" (click)="setVol($event)">
+        <div class="bar-vol-total" [style.width]="vol * 100 + '%'"></div>
       </div>
     </div>
   </div>

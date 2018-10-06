@@ -84,9 +84,19 @@ export class PlayerComponent implements OnInit {
   }
 
   skip (e) {
-    const percent: number = e.offsetX * 100 / e.currentTarget.clientWidth
+    const percent: number = this.getPercent(e)
     this.reproduced = percent
     this.audio.currentTime = percent * this.totalTime / 100
+  }
+
+  setVol (e) {
+    const vol: number = this.getPercent(e) / 100
+    this.vol = vol
+    this.audio.volume = vol
+  }
+
+  getPercent (event): number {
+    return event.offsetX * 100 / event.currentTarget.clientWidth
   }
 
   onMouseMove (e) {
