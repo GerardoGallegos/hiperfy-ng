@@ -33,8 +33,8 @@
       </div>
     </div>
     <div class="vol-box">
-      <div class="vol-btn">
-        <span class="icon-sound"></span>
+      <div class="vol-btn" (click)="toggleMute()">
+        <span [ngClass]="isMute ? 'icon-mute' : 'icon-sound'"></span>
       </div>
       <div class="bar-vol" (click)="setVol($event)">
         <div class="bar-vol-total" [style.width]="vol * 100 + '%'"></div>

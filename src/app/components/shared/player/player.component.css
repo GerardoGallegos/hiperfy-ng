@@ -108,6 +108,7 @@
   color: #505c72;
   font-size: 22px;
   cursor: pointer;
+  margin-right: 1em;
 }
 
 .bar-vol {
@@ -115,7 +116,7 @@
   height: 8px;
   background-color: #273044;
   position: relative;
-  margin-left: 1em;
+  cursor: pointer;
 }
 
 .bar-vol-total {

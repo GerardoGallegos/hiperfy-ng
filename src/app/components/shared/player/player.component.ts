@@ -15,6 +15,13 @@ export class PlayerComponent implements OnInit {
   // The playing status
   isPlaying: boolean = false
 
+  // Mute the audio
+  isMute: boolean = false
+
+  // Is used to keep the prev volume
+  // when is toggle the mute button
+  prevVol: number = 0
+
   // Type of duration time
   // 'total' 3:00 | 'restant' 1:32
   durationFormat: string = 'total'
@@ -83,10 +90,24 @@ export class PlayerComponent implements OnInit {
     }
   }
 
+  toggleMute () {
+    if (!this.isMute) {
+      this.isMute = true
+      this.prevVol = this.vol
+      this.audio.volume = 0
+      this.vol = 0
+    } else {
+      this.isMute = false
+      this.audio.volume = this.prevVol
+      this.vol = this.prevVol
+    }
+  }
+
   skip (e) {
     const percent: number = this.getPercent(e)
     this.reproduced = percent
     this.audio.currentTime = percent * this.totalTime / 100
+    this.isMute = false
   }
 
   setVol (e) {
