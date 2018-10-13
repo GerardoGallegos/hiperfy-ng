@@ -10,7 +10,7 @@ const AUDIO_EXAMPLE = 'https://mp3d.jamendo.com/?trackid=174271&format=mp32&from
 export class PlayerComponent implements OnInit {
   
   // Autoplay on load, default true
-  @Input() autoplay: boolean = true
+  @Input() autoplay: boolean = false
 
   // The playing status
   isPlaying: boolean = false
@@ -107,13 +107,13 @@ export class PlayerComponent implements OnInit {
     const percent: number = this.getPercent(e)
     this.reproduced = percent
     this.audio.currentTime = percent * this.totalTime / 100
-    this.isMute = false
   }
 
   setVol (e) {
     const vol: number = this.getPercent(e) / 100
     this.vol = vol
     this.audio.volume = vol
+    this.isMute = false
   }
 
   getPercent (event): number {

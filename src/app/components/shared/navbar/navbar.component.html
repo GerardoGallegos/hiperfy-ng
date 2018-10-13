@@ -7,15 +7,17 @@
       <a [routerLink]="['browse']" routerLinkActive="active">Browse</a>
     </li>
     <li>
-      <a [routerLink]="['playlist']" routerLinkActive="active">Playlist</a>
-    </li>
-    <li>
       <a [routerLink]="['account']" routerLinkActive="active">Account</a>
     </li>
     <li>
-      <div class="add-playlist">
+      <div class="add-playlist" (click)="openModal()">
         + New Playlist
       </div>
     </li>
   </ul>
 </nav>
+<vf-new-playlist
+[show]="showModal"
+(onCloseModal)="closeModal()"
+>
+</vf-new-playlist>

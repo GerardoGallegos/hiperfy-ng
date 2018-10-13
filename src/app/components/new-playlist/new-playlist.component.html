@@ -1,0 +1,10 @@
+<div class="panel" [className]="show ? 'panel show' : 'panel'" (click)="closeModal()">
+  <div class="zoomIn animated modal" (click)="modalClick($event)">
+    <div class="title">Create Playlist</div>
+    <input class="input" type="text" placeholder="Playlist Name" value="New Playlist" #input/>
+    <div class="buttons">
+      <button class="button" (click)="closeModal()">Cancel</button>
+      <button class="button button--primary" (click)="addNewPlaylist(input.value)">Create</button>
+    </div>
+  </div>
+</div>
