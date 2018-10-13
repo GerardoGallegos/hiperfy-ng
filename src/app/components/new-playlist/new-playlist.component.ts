@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'vf-new-playlist',
@@ -10,11 +10,18 @@ export class NewPlaylistComponent implements OnInit {
 
   @Output() onCloseModal: EventEmitter<boolean>
 
+  @ViewChild("input") input: ElementRef
+
   constructor() {
     this.onCloseModal = new EventEmitter()
   }
 
   ngOnInit() {
+  }
+
+  ngAfterViewChecked () {
+    this.input.nativeElement.focus()
+    this.input.nativeElement.setSelectionRange(0,50)
   }
   
   closeModal () {
@@ -27,6 +34,7 @@ export class NewPlaylistComponent implements OnInit {
 
   addNewPlaylist (name) {
     console.log(name)
+    this.input.nativeElement.value = 'New Playlist'
     this.closeModal()
   }
 
